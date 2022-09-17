@@ -17,7 +17,7 @@ const SchoolPage = ({
 }) => {
   useEffect(() => {
     axios
-      .get("http://localhost:4000/classrooms")
+      .get("http://localhost:3000/classrooms")
       .then(({ data }) => setClassrooms(data));
   }, []);
 
@@ -25,7 +25,7 @@ const SchoolPage = ({
     <StyleDiv>
       {classrooms.map((c) => {
         return (
-          <Garage
+          <CrRoom
             key={c._id}
             name={c.name}
             img={c.img}

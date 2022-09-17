@@ -126,7 +126,7 @@ function App() {
               <Navigate to = "/login" replace />
               ) : (
                 <PeerRoomPage
-                  peerClassroom = {peerRoom}
+                  peerClassroom = {peerroom}
                   peerspot = {peerspot}
                   setPeerspot = {setPeerspot}
                   />

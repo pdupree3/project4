@@ -13,7 +13,7 @@ const DetailsPage = ({ brightspot, classroomId }) => {
 
   const deleteSpot = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:4000/classroom/${id}`, formData).then(() => {
+    axios.put(`http://localhost:3000/classroom/${id}`, formData).then(() => {
       navigate("/classroom", { replace: true });
     });
   };

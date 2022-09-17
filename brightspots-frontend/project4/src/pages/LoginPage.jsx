@@ -8,7 +8,7 @@ const StyledForm = styled.form`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  background-color: #c0ffee;
+  background-color: green;
   border-radius: 20px;
   box-sizing: border-box;
   box-align: center;
@@ -25,11 +25,11 @@ const StyledForm = styled.form`
   align-items: top;
   };
   button {
-  background-color: #08d;
+  background-color: #34f;
   border-radius: 20px;
   border: 0;
   box-sizing: border-box;
-  color: #eee;
+  color: #aaa;
   cursor: pointer;
   font-size: 18px;
   height: 150px;
@@ -45,7 +45,7 @@ input {
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: #eee;
+  color: #aaa;
   font-size: 18px;
   height: 100%;
   outline: 0;
@@ -71,7 +71,7 @@ const LoginPage = ({ setUser, user }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:4000/login`, formData).then((res) => {
+    axios.post(`http://localhost:3000/login`, formData).then((res) => {
       if (res.status === 200) {
         setUser(res.data);
         navigate("/classroom");

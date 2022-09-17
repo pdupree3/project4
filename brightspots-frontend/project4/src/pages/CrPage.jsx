@@ -36,11 +36,12 @@ const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, se
   useEffect(() => {
     user &&
       axios
-        .get(`http://localhost:4000/classroom?owner=${user._id}`)
+        .get(`http://localhost:3000/classroom?owner=${user._id}`)
         .then(({ data }) => {
           setClassroom(data);
           setBrightspots(data.brightspots);
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -54,17 +55,18 @@ const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, se
       </button>
       
       
-      {brightspots.map((w) => {
+      {brightspots.map((b) => {
+        console.log(brightspots)
         return (
           <span>
             <Brightspot
-              key={w._id}
-              id={w._id}
-              img={w.img}
-              grade={w.grade}
-              value={w.value}
-              teacher={w.teacher}
-              action={w.action}
+              key={b._id}
+              id={b._id}
+              img={b.img}
+              grade={b.grade}
+              value={b.value}
+              teacher={b.teacher}
+              action={b.action}
               setBrightspot={setBrightspot}
             />
           </span>

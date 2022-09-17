@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 4500;
+const PORT = 3100;
 const userRoutes = require("./routes/userRoutes");
 const brightRoutes = require("./routes/brightRoutes");
 const brightSpotsRoutes = require("./routes/brightSpotsRoutes");

@@ -12,7 +12,7 @@ const PeerRoomPage = ({
       {peerSpots.map((s) => {
         return (
           <div>
-            <Neighborship
+            <PeerSpot
               key={s._id}
               id={s._id}
               img={s.img}

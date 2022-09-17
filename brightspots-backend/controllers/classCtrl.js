@@ -1,5 +1,5 @@
 const Class = require("../models/Class");
-// const Whip = require("../models/Class");
+// const Whip = require("../models/");
 
 const index = (req, res) => {
   console.log(req.body);

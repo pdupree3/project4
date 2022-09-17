@@ -100,7 +100,7 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:4000/classroom/`, formData) //I believe this is the URL we would use but please adjust if necessary
+      .put(`http://localhost:3000/classroom/`, formData) //I believe this is the URL we would use but please adjust if necessary
       .then((res) => {
         setFormData(initialState);
 

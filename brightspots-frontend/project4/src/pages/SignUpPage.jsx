@@ -8,7 +8,7 @@ const StyledForm = styled.form`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  background-color: #c0ffee;
+  background-color: green;
   border-radius: 20px;
   box-sizing: border-box;
   box-align: center;
@@ -25,11 +25,11 @@ const StyledForm = styled.form`
   align-items: top;
   };
   button {
-  background-color: #08d;
+  background-color: #34f;
   border-radius: 20px;
   border: 0;
   box-sizing: border-box;
-  color: #eee;
+  color: #aaa;
   cursor: pointer;
   font-size: 18px;
   height: 150px;
@@ -45,13 +45,17 @@ input {
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: #eee;
+  color: #aaa;
   font-size: 18px;
   height: 100%;
   outline: 0;
   padding: 4px 20px 0;
   width: 100%;
 };
+label {
+
+}
+
 `
 
 const SignUpPage = () => {
@@ -73,7 +77,7 @@ const SignUpPage = () => {
     } else if (formData.password !== formData.passwordConfirm) {
       alert("Passwords do not match");
     } else {
-      axios.post(`http://localhost:4000/signup`, formData).then((res) => {
+      axios.post(`http://localhost:3000/signup`, formData).then((res) => {
         navigate("/login");
       });
     }
@@ -81,7 +85,7 @@ const SignUpPage = () => {
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>Sign UP!!!</h1>
       <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="name">Username:</label>
         <input type="text" name="name" id="name" onChange={handleChange} />
