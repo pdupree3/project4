@@ -7,8 +7,9 @@ const bcrypt = require("bcrypt");
 bcrypt.hash("ABC123", 8, (err, hash) => {
   User.deleteMany({})
     .then(() => {
-      User.insertMany([
+      return User.insertMany([
         { name: "PJ", password: hash },
+        { name: "James", password: hash},
       ])
       .then((users) => {
         console.log(users)
