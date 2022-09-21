@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-// const mongoURI = "mongodb://localhost:27017/my-brightspots";
+const mongoURI = "mongodb://localhost:27017/my-brightspots";
 
-const mongoURI = process.env.REACT_APP_DB_URL;
+// const mongoURI = process.env.REACT_APP_DB_URL;
 
 
 mongoose

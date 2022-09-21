@@ -34,7 +34,7 @@ const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, se
   useEffect(() => {
     user &&
       axios
-        .get(`http://localhost:3000/classroom?owner=${user._id}`)
+        .get(`http://localhost:3000/classroom?teacher=${user._id}`)
         .then(({data}) => {
           setClassroom(data);
           setBrightspots(data.brightspots);
@@ -43,7 +43,7 @@ const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, se
   }, []);
 
   return (
-    <div class="container">
+    <div className="container">
       <h1>{user.name}'s Brightspots</h1>
       <StyledForm>
       <button>
@@ -51,9 +51,6 @@ const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, se
           New Brightspot
         </Link>
       </button>
-      
-      
-      {console.log(brightspots)}
   
       {brightspots.map((b) => {
         return (

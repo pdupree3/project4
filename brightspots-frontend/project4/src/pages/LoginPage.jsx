@@ -83,7 +83,7 @@ const LoginPage = ({ setUser, user }) => {
     <div>
       <h1>Login</h1>
       <StyledForm onSubmit={handleSubmit}>
-        <div class="title">Sign in to view your classroom!</div>
+        <div className="title">Sign in to view your classroom!</div>
         <label htmlFor="name">Username:</label>
         <input type="text" name="username" id="name" onChange={handleChange} />
         <br />

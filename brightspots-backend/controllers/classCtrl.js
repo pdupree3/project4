@@ -13,7 +13,7 @@ const index = (req, res) => {
 };
 
 const createClassroom = async (req, res) => {
-  let newClass = await Classroom.create(req.body);
+  let newClassroom = await Classroom.create(req.body);
 
   res.json(newClassroom);
 };

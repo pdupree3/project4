@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const userRoutes = require("./routes/userRoutes");
 const classroomRoutes = require("./routes/classroomRoutes");
 const schoolRoutes = require("./routes/schoolRoutes");
@@ -13,7 +13,7 @@ const cookieParser = require("cookie-parser");
 
 // load the env vars
 require("dotenv").config();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || "3000";
 
 // database require command // 
 require("./db/connection")
@@ -34,6 +34,6 @@ app.use("/signup", signupRoute);
 
 app.get("/", (req, res) => res.json("Welcome to DPA's Bright Spots!!!"));
 
-app.listen(port, () => {
-  console.log(`listening on port:${port}`);
+app.listen(PORT, () => {
+  console.log(`listening on port:${PORT}`);
 });

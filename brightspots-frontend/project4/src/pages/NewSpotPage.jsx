@@ -85,7 +85,7 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
     grade: "",
     img: "",
     action: "",
-    classroomId: classroom._id
+    classroomId: classroom._id,
   };
 
   const navigate = useNavigate();
