@@ -1,5 +1,5 @@
 const User = require("../models/User");
-const Class = require("../models/Class");
+const Classroom = require("../models/Classroom");
 const bcrypt = require("bcrypt");
 
 const signup = async (req, res) => {
@@ -14,9 +14,9 @@ const signup = async (req, res) => {
       }
       User.create({ name: req.body.name, password: hash }).then((user) => {
         res.json(user);
-        Class.create({
+        Classroom.create({
           teacher: user._id,
-          name: `${user.name}'s Class`,
+          name: `${user.name}'s Classroom`,
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9vs_p9MrrBh5YwyIej8h8ZW7oAhgJ2HBayVmRw47XeaIeg-t6yMoxox8N3QXjSdev-J0&usqp=CAU",
         });
       });

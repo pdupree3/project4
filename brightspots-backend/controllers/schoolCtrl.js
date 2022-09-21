@@ -1,12 +1,12 @@
-const Class = require("../models/Class");
+const Classroom = require("../models/Classroom");
 
 const indexAll = (req, res) => {
-  Class.find({}, (err, classes) => {
+  Classroom.find({}, (err, school) => {
     if (err) {
       res.status(400).json(err);
       return;
     }
-    res.json(classes);
+    res.json(school);
   });
 };
 

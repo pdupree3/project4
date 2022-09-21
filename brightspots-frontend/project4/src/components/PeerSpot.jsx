@@ -15,7 +15,7 @@ const PeerSpot = ({
   teacher,
   grade,
   img,
-  description,
+  action,
   setPeerSpot,
 }) => {
   const handleClick = () => {
@@ -24,7 +24,7 @@ const PeerSpot = ({
       grade: grade,
       value: value,
       teacher: teacher,
-      description: description,
+      action: action,
       _id: id,
     });
   };

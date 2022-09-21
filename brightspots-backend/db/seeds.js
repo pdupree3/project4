@@ -1,5 +1,5 @@
 require("./connection");
-const Class = require("../models/Class");
+const Classroom = require("../models/Classroom");
 // const class = require("./seeds.json");
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
@@ -16,7 +16,7 @@ bcrypt.hash("ABC123", 8, (err, hash) => {
       });
     })
     .then(() => {
-      Class.deleteMany({})
+      Classroom.deleteMany({})
         .catch((err) => console.error(err))
         .finally(() => {
           process.exit();

@@ -8,8 +8,8 @@ const StyleDiv = styled.div`
 `;
 
 const SchoolPage = ({
-  classrooms,
-  setClassrooms,
+  school,
+  setSchool,
   setPeerRoom,
   setPeerSpots,
   peerRoom,
@@ -17,13 +17,14 @@ const SchoolPage = ({
 }) => {
   useEffect(() => {
     axios
-      .get("http://localhost:3000/classrooms")
-      .then(({ data }) => setClassrooms(data));
+      .get("http://localhost:3000/school")
+      .then(({ data }) => setSchool(data));
+      // eslint-disable-next-line 
   }, []);
 
   return (
     <StyleDiv>
-      {classrooms.map((c) => {
+      {school.map((c) => {
         return (
           <CrRoom
             key={c._id}

@@ -13,7 +13,9 @@ const DetailsPage = ({ brightspot, classroomId }) => {
 
   const deleteSpot = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:3000/classroom/${id}`, formData).then(() => {
+    axios
+    .put(`http://localhost:3000/classroom/${id}`, formData)
+    .then(() => {
       navigate("/classroom", { replace: true });
     });
   };
@@ -23,7 +25,7 @@ const DetailsPage = ({ brightspot, classroomId }) => {
         {brightspot.value} {brightspot.teacher} - {brightspot.grade}
       </h1>
       <img src={brightspot.img} alt={`${brightspot.grade} ${brightspot.value} ${brightspot.teacher}`} />
-      <p>{brightspot.description}</p>
+      <p>{brightspot.action}</p>
       <Link to={`/classroom/${id}/edit`}>
         <button>Edit</button>
       </Link>

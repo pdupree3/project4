@@ -2,9 +2,9 @@
     {
         "brightspots": [
             {
-                "classname": "Morehouse",
+                "value": "Optimism",
                 "teacher": "Mr. Dupree",
-                "student": "Saquan",
+                "grade": "10th",
                 "action": "Saquan showed the value of growth when he accepted and implented feedback immediately. ",
                 "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgXbCM_Pj10sD1plMmE9tbqc0uKlD4VNsysw&usqp=CAU"
     

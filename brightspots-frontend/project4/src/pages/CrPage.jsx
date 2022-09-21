@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components'
 
 const StyledForm = styled.form`
-
   button {
   background-color: #08d;
   border-radius: 20px;
@@ -29,15 +28,14 @@ span {
 h1 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-`
-
+`;
 
 const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, setBrightspot }) => {
   useEffect(() => {
     user &&
       axios
         .get(`http://localhost:3000/classroom?owner=${user._id}`)
-        .then(({ data }) => {
+        .then(({data}) => {
           setClassroom(data);
           setBrightspots(data.brightspots);
         });
@@ -55,8 +53,9 @@ const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, se
       </button>
       
       
+      {console.log(brightspots)}
+  
       {brightspots.map((b) => {
-        console.log(brightspots)
         return (
           <span>
             <Brightspot
@@ -74,7 +73,6 @@ const CrPage = ({ user, setClassroom, classroom, brightspots, setBrightspots, se
       })}
       </StyledForm>
     </div>
-    
   );
 };
 

@@ -66,7 +66,7 @@ const NavBar = ({ handleLogout, user }) => {
         <ul>
           <li>
              <Link className="nav" to="/"> Welcome to DPA's Brightspots!!!
-            {/* <img class="logo" src="https://i.imhttps://www.googhttps://clarkfoundationdc.org/wp-content/uploads/2021/07/Digital-Pioneer-Academy-Logo.jpgle.com/imgres?imgurl=https%3A%2F%2Fclarkfoundationdc.org%2Fwp-image.png%2Fuploadhttps://www.indeed.com/cmp/Digital-Pioneers-Academy-1s%2F2021%2F07%2FDigital-Pioneer-Academy-Logo.jpg&imgrefurl=https%3A%2F%2Fclarkfoundationdc.org%2Fgrantees%2Fdigital-pioneers-academy%2Fdigital-pioneer-academy-logo%2F&tbnid=WW9aVMUED2PIXM&vet=12ahUKEwjC_biE_Zv6AhXBtXIEHUj0DpwQMygMegUIARDJAQ..i&docid=MdXbGGWlxOBKiM&w=1031&h=231&q=digital%20pioneers%20academy&ved=2ahUKEwjC_biE_Zv6AhXBtXIEHUj0DpwQMygMegUIARDJAQgur.com/x2deOJC.pnghttps://clarkfoundationdc.org/wp-content/uploads/2021/07/Digital-Pioneer-Academy-Logo.jpg" alt='DPA'/> */}
+            <img className="logo" src="https://i.imhttps://www.googhttps://clarkfoundationdc.org/wp-content/uploads/2021/07/Digital-Pioneer-Academy-Logo.jpgle.com/imgres?imgurl=https%3A%2F%2Fclarkfoundationdc.org%2Fwp-image.png%2Fuploadhttps://www.indeed.com/cmp/Digital-Pioneers-Academy-1s%2F2021%2F07%2FDigital-Pioneer-Academy-Logo.jpg&imgrefurl=https%3A%2F%2Fclarkfoundationdc.org%2Fgrantees%2Fdigital-pioneers-academy%2Fdigital-pioneer-academy-logo%2F&tbnid=WW9aVMUED2PIXM&vet=12ahUKEwjC_biE_Zv6AhXBtXIEHUj0DpwQMygMegUIARDJAQ..i&docid=MdXbGGWlxOBKiM&w=1031&h=231&q=digital%20pioneers%20academy&ved=2ahUKEwjC_biE_Zv6AhXBtXIEHUj0DpwQMygMegUIARDJAQgur.com/x2deOJC.pnghttps://clarkfoundationdc.org/wp-content/uploads/2021/07/Digital-Pioneer-Academy-Logo.jpg" alt='DPA'/>
             </Link>
           </li> 
           </ul>
@@ -94,8 +94,8 @@ const NavBar = ({ handleLogout, user }) => {
         </li>
         <li>
         {user._id ? (
-          <Link className="nav" to="/classrooms">
-            classrooms
+          <Link className="nav" to="/school">
+            Classrooms
           </Link>
         ) : null}
         </li>

@@ -51,12 +51,10 @@ input {
   outline: 0;
   padding: 4px 20px 0;
   width: 100%;
-};
-label {
-
 }
-
-`
+label {
+}
+`;
 
 const LoginPage = ({ setUser, user }) => {
   const navigate = useNavigate();
@@ -71,7 +69,9 @@ const LoginPage = ({ setUser, user }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:3000/login`, formData).then((res) => {
+    axios
+    .post(`http://localhost:3000/login`, formData)
+    .then((res) => {
       if (res.status === 200) {
         setUser(res.data);
         navigate("/classroom");

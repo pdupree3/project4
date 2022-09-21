@@ -15,16 +15,38 @@ import EditSpotPage from "./pages/EditSpotPage";
 import PeerRoomPage from "./pages/PeerRoomPage";
 import PeerDetailsPage from "./pages/PeerDetailsPage"
 
+
+
+
 function App() {
   const [user, setUser] = useState({});
+  
   const [classroom, setClassroom] = useState({});
+  
   const [brightspots, setBrightspots] = useState({});
+  
   const [brightspot, setBrightspot] = useState({});
+  
   const [school, setSchool] = useState({});
+  
   const [peerroom, setPeerroom] = useState({});
+  
   const [peerspots, setPeerspots] = useState({});
+  
   const [peerspot, setPeerspot] = useState({});
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   const handleLogout = () => {
     setUser({});
     setClassroom({});
@@ -33,6 +55,7 @@ function App() {
   const navigate = useNavigate();
   
   return (
+
     <div className="App">
       <NavBar handleLogout={handleLogout} user={user} />
       <Routes>
@@ -42,10 +65,7 @@ function App() {
             <LoginPage setUser = {setUser} setClassroom = {setClassroom} user = {user} />
           }
           />
-        <Route
-          path = "/signup" 
-          element = {<SignUpPage />} 
-          />
+        <Route path = "/signup" element = {<SignUpPage />} />
         <Route
           path = "/classroom"
           element= {
@@ -70,12 +90,10 @@ function App() {
               !user.id ? (
                 <Navigate to= "/login" replace />
               ) : (
-                <DetailsPage brightspot={brightspot} classroomId = {classroom._id}
-                />
+                <DetailsPage brightspot={brightspot} classroomId = {classroom._id} />
               )
             }
             />
-
           <Route
             path = "classroom/:id/edit"
             element = {
@@ -91,6 +109,7 @@ function App() {
               )
             }
             />
+
           <Route 
             path = "classroom/new-brightspot"
             element = {
@@ -116,7 +135,6 @@ function App() {
                   peerroom = {peerroom}
                   />
                 )
-              
               }
               />
           <Route
@@ -131,7 +149,6 @@ function App() {
                   setPeerspot = {setPeerspot}
                   />
               )
-            
           }
           />
           <Route
@@ -145,12 +162,10 @@ function App() {
             }
             />
           <Route 
-            path = "*"
-            element = {<Navigate to = "/login" replace />}  />
-
-            
+            path = "*" element = {<Navigate to = "/login" replace />} />
       </Routes>
     </div>
+    
   );
 }
 

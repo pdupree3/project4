@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const brightspotSchema = new mongoose.Schema({
-  classname: String,
+  value: String,
   teacher: String,
-  student: String,
-  action: String,
+  grade: String,
   img: String,
+  action: String,
 });
 
 const Brightspot = mongoose.model("Brightspot", brightspotSchema);

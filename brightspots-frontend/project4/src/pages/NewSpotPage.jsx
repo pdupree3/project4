@@ -76,7 +76,7 @@ button:active {
   color: grey
 }
 `;
-// Adjust styling to preference
+
 
 const NewSpotPage = ({ addBrightspot, classroom }) => {
   const initialState = {
@@ -85,7 +85,7 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
     grade: "",
     img: "",
     action: "",
-    classroomId: classroom._id,
+    classroomId: classroom._id
   };
 
   const navigate = useNavigate();
@@ -98,29 +98,29 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     axios
-      .put(`http://localhost:3000/classroom/`, formData) //I believe this is the URL we would use but please adjust if necessary
+      .put(`http://localhost:3000/classroom/`, formData) 
       .then((res) => {
         setFormData(initialState);
 
-        navigate("/classroom", { replace: true }); //Maybe change the redirect here if necessary
+        navigate("/classroom", { replace: true }); 
       });
   };
 
   return (
     <StyledForm onSubmit={handleSubmit}>
       <div>
-        <div class='title'>New Brightspot</div>
+        <div className='title'>New Brightspot</div>
 
         
         
-        <label class='label' htmlFor="value">value: </label>
+        <label className='label' htmlFor="value">value: </label>
         <input
           id="value"
           name="value"
           type="text"
-          class= "inputfield1"
+          className= "inputfield1"
           value={formData?.name}
           onChange={handleChange}
         />
@@ -129,12 +129,14 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
       <br></br>
     
       <div>
-        <label class='label' htmlFor="teacher">Core Value: </label>
+        <label className='label' htmlFor="teacher">
+          Teacher:{" "} 
+          </label>
         <input
           id="teacher"
           name="teacher"
           type="text"
-          class= "inputfield"
+          className= "inputfield"
           checked={formData?.teacher}
           onChange={handleChange}
         />
@@ -143,13 +145,14 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
       <br></br>
 
       <div>
-
-        <label class='label' htmlFor="grade">grade: </label>
+        <label className='label' htmlFor="grade">
+          Grade:{" "}
+          </label>
         <input
           id="grade"
           name="grade"
           type="text"
-          class= "inputfield"
+          className= "inputfield"
           value={formData?.grade}
           onChange={handleChange}
         />
@@ -158,12 +161,14 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
       <br></br>
 
       <div>
-        <label class='label' htmlFor="img">Image: </label>
+        <label className='label' htmlFor="img">
+          Image: {" "} 
+          </label>
         <input
           id="img"
           name="img"
           type="text"
-          class= "inputfield"
+          className= "inputfield"
           value={formData?.img}
           onChange={handleChange}
         />
@@ -172,18 +177,20 @@ const NewSpotPage = ({ addBrightspot, classroom }) => {
       <br></br>
 
       <div>
-        <label class='label' htmlFor="action">action: </label>
+        <label className='label' htmlFor="action">
+          Action:{" "}
+          </label>
         <input
           id="action"
           name="action"
           type="text"
-          class= "inputfield"
+          className= "inputfield"
           value={formData?.action}
           onChange={handleChange}
         />
       </div>
 
-      <input type="submit" class='button' value="Create Brightspot" />
+      <input type="submit" className='button' value="Create Brightspot" />
     </StyledForm>
   );
 };

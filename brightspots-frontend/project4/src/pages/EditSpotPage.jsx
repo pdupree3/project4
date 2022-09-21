@@ -71,7 +71,7 @@ const StyledForm = styled.form`
 };
 `;
 
-const EditSpotPage = ({ brightspot, classroom, setbrightspot, brightspotId }) => {
+const EditSpotPage = ({ brightspot, classroom, setBrightspot, brightspotId }) => {
   let { id } = useParams(); //Used in the handleSubmit function
   let navigate = useNavigate();
 
@@ -94,7 +94,7 @@ const EditSpotPage = ({ brightspot, classroom, setbrightspot, brightspotId }) =>
     e.preventDefault();
 
     axios.put(`http://localhost:3000/classroom/${id}/edit`, formData); //I believe this is the URL we would use but please adjust if necessary
-    setbrightspot({
+    setBrightspot({
       value: formData.value,
       teacher: formData.teacher,
       grade: formData.grade,
@@ -105,14 +105,8 @@ const EditSpotPage = ({ brightspot, classroom, setbrightspot, brightspotId }) =>
     navigate(`/classroom/${id}`, { replace: true }); //Maybe change the redirect here if necessary
 
     // setFormData(initialState);
-    // setbrightspots(res.data);
+    // setBrightspots(res.data);
   };
-
-  // useEffect(() => {
-  //   axios.get(`http://localhost:4000/classroom/${id}`).then((res) => {
-  //     setFormData(res.data);
-  //   });
-  // }, []);
 
   return (
     <StyledForm onSubmit={handleSubmit}>

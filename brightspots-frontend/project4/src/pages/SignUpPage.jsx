@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components'
 
+
+
 const StyledForm = styled.form`
   display: flex;
   flex-flow: column nowrap;
@@ -51,12 +53,8 @@ input {
   outline: 0;
   padding: 4px 20px 0;
   width: 100%;
-};
-label {
-
 }
-
-`
+`;
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -77,7 +75,9 @@ const SignUpPage = () => {
     } else if (formData.password !== formData.passwordConfirm) {
       alert("Passwords do not match");
     } else {
-      axios.post(`http://localhost:3000/signup`, formData).then((res) => {
+      axios
+      .post(`http://localhost:3000/signup`, formData)
+      .then((res) => {
         navigate("/login");
       });
     }

@@ -1,9 +1,9 @@
-const Class = require("../models/Class");
+const Classroom = require("../models/Classroom");
 // const Whip = require("../models/");
 
 const index = (req, res) => {
   console.log(req.body);
-  Class.findOne({ teacher: req.query.teacher }, (err, classroom) => {
+  Classroom.findOne({ teacher: req.query.teacher }, (err, classroom) => {
     if (err) {
       res.status(400).json(err);
       return;
@@ -13,21 +13,21 @@ const index = (req, res) => {
 };
 
 const createClassroom = async (req, res) => {
-  let newClass = await Class.create(req.body);
+  let newClass = await Classroom.create(req.body);
 
-  res.json(newClass);
+  res.json(newClassroom);
 };
 
 const createBrightspot = (req, res) => {
   console.log("create function is hit");
-  Class.updateOne(
-    { _id: req.body.classId },
+  Classroom.updateOne(
+    { _id: req.body.classroomId },
     {
       $push: {
         brightspots: {
-          classname: req.body.classname,
+          value: req.body.value,
           teacher: req.body.teacher,
-          student: req.body.student,
+          grade: req.body.grade,
           action: req.body.action,
           img: req.body.img,
         },
@@ -45,35 +45,35 @@ const createBrightspot = (req, res) => {
 };
 
 const show = (req, res) => {
-  Class.findById(req.body.classroomId, (err, classroom) => {
+  Classroom.findById(req.body.classroomId, (err, classroom) => {
     if (err) {
       res.status(400).json(err);
       return;
     }
 
-    let brightspots = classroom.brightspots.id(req.params.id);
+    let brightspot = classroom.brightspots.id(req.params.id);
 
-    res.json(brightspots);
-    // classroom.save(err => err)
-    // res.redirect('/classroom')
+    res.json(brightspot);
+    
+
   });
 };
 
 const update = (req, res) => {
-  Class.findById(req.body.classroomId, (er, classroom) => {
+  Classroom.findById(req.body.classroomId, (er, classroom) => {
     if (er) {
       res.status(400).json(er);
       return;
     }
     let brightspots = classroom.brightspots;
     console.log(brightspots);
-    brightspots.forEach((w) => {
-      if (w._id == req.params.id) {
-        w.classname = req.body.classname;
-        w.teacher = req.body.teacher;
-        w.student = req.body.student;
-        w.action = req.body.action;
-        w.img = req.body.img;
+    brightspots.forEach((b) => {
+      if (b._id == req.params.id) {
+        b.value = req.body.value;
+        b.teacher = req.body.teacher;
+        b.grade = req.body.grade;
+        b.action = req.body.action;
+        b.img = req.body.img;
       }
     });
     classroom.save();
@@ -83,7 +83,7 @@ const update = (req, res) => {
 function deleteBrightspot(req, res) {
   console.log(req.params.id);
   console.log(req.body.classroomId);
-  Class.findByIdAndUpdate(
+  Classroom.findByIdAndUpdate(
     req.body.classroomId,
     { $pull: { brightspots: { _id: req.params.id } } },
     { new: true }
